@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "894525671770",
+    "firebase_url": "https://livrolegal-65a1b.firebaseio.com",
+    "project_id": "livrolegal-65a1b",
+    "storage_bucket": "livrolegal-65a1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894525671770:android:c8f9bdb8e8b214e1",
+        "android_client_info": {
+          "package_name": "br.com.juliorgm.livrolegal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894525671770-h93bqmdri03d2fb6t8jdm3hhicuqdsjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.juliorgm.livrolegal",
+            "certificate_hash": "187e9126d5f649cfffd793bd4628d2e917b4da73"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3bqDUCrWBZEevOPQi4zTac55MJUxPCgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894525671770-mthpahtbs78j4jl617g1lcvn890i11l4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
