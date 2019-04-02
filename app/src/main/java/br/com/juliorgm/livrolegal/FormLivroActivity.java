@@ -26,31 +26,17 @@ public class FormLivroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_livro);
 
-        editTitulo = findViewById(R.id.edit_titulo);
-        editAutor = findViewById(R.id.edit_autor);
-        editEditora = findViewById(R.id.edit_editora);
-        editDescricao = findViewById(R.id.edit_descricao);
-        buttonSalvar = findViewById(R.id.button_salvar);
-        buttonSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                livro = pegaLivro();
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference reference = database.getReference("livros");
-
-                reference.push().setValue(livro);
-                finish();
-            }
-        });
+        carregaViews();
+        cliqueBotoes();
 
         Intent intent = getIntent();
-        if (intent != null){
-            livro = (Livro)intent.getSerializableExtra("LIVRO");
-            carregaCampos(livro);
+        livro = (Livro)intent.getSerializableExtra("LIVRO");
+        if (livro!=null) {
+            preencheFormulario(livro);
         }
     }
 
-    private void carregaCampos(Livro livro) {
+    private void preencheFormulario(Livro livro) {
         editTitulo.setText(livro.getmTitulo());
         editAutor.setText(livro.getmAutor());
         editEditora.setText(livro.getmEditora());
@@ -61,11 +47,15 @@ public class FormLivroActivity extends AppCompatActivity {
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                livro = pegaLivro();
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference reference = database.getReference("livros");
 
-                reference.push().setValue(livro);
+                if(livro!=null){
+                    reference.child(livro.getmId()).setValue(pegaLivro());
+                } else{
+                    reference.push().setValue(pegaLivro());
+                }
+
                 finish();
             }
         });
